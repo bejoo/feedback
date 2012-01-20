@@ -74,7 +74,7 @@
 							console.log(e);
 							console.log(window);
 							console.log($(this).selector);
-							
+							console.log($(this).html());
 							callback();
 							$doc.off('click.feedback');
 							return;
