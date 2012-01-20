@@ -48,8 +48,8 @@ app.get("*.less", function(req, res) {
 // Routes
 
 app.get('/', routes.index);
-app.get('/api/feedback/log/', routes.feedback_log);
+app.post('/api/feedback/log/', routes.feedback_log);
 
 
-app.listen(3001);
+app.listen(3000);
 console.log("Feedback server listening on port %d in %s mode", app.address().port, app.settings.env);
