@@ -14,6 +14,15 @@
 					this.data.message = message;
 				};
 				
+				Feedback.prototype.addUrl = function(url)
+				{
+					if(!url)
+					{
+						url = location.href;
+					}
+					this.data.url = url;
+				}
+				
 				Feedback.prototype.send = function()
 				{
 					if(!this.url) { return; }
@@ -39,7 +48,9 @@
 						console.log('feedback');
 						var feedback  = new Feedback();
 						console.log(feedback);
+						console.log(location);
 						
+						feedback.addUrl();
 						feedback.addMessage('hello');
 						feedback.send()
 					}
