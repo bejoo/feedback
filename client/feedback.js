@@ -21,11 +21,26 @@
 						url = location.href;
 					}
 					this.data.url = url;
-				}
+				};
+				
+				Feedback.addDOMObject = function(dom_object)
+				{
+					
+				};
+				
+				Feedback.addAdditionalData = function()
+				{
+					
+				};
 				
 				Feedback.prototype.send = function()
 				{
 					if(!this.url) { return; }
+					
+					if(!this.data.url)
+					{
+						this.addUrl();
+					}
 					
 					console.log(this.data);
 					$.post(this.url, this.data);
@@ -48,9 +63,7 @@
 						console.log('feedback');
 						var feedback  = new Feedback();
 						console.log(feedback);
-						console.log(location);
-						
-						feedback.addUrl();
+
 						feedback.addMessage('hello');
 						feedback.send()
 					}
