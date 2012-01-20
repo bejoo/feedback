@@ -5,10 +5,21 @@ var mongoose = require('mongoose'),
 //database connection
 mongoose.connect('mongodb://localhost/feedback');
 
+var AddInfoSchema = new Schema(
+{
+		name: String
+	,	content: String
+});
+
+
 var FeedbackSchema = new Schema({
     message: String
   , url: String
-  , dom: String
+  , dom: {
+  			  selector: String
+  			, html: String
+  		}
+  , additional_info: [AddInfoSchema]
 });
 
 
