@@ -1,7 +1,3 @@
-% bejoo/feedback
-% Joris Morger
-% 
-
 Documentation
 
 # General
