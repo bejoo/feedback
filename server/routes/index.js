@@ -6,8 +6,17 @@ var mongoose = require('mongoose');
 var Feedback = require('../models/Feedback');
 
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' })
+exports.index = function(req, res)
+{
+//	Feedback.find({}, [], {'group': 'message'}, function (err, feedback) 
+	Feedback.find(function (err, feedback) 
+  	{
+  	  res.render('index', 
+  	  { 
+  	  		title: 'Feedback'
+  	  	,	feedbacks: feedback
+  	  });
+	});
 };
 
 
