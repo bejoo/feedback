@@ -1,2 +1,10 @@
 h1= title
-p Welcome to #{title}
+p Feedback entries:
+
+
+- each feedback in feedbacks
+	div.feedback
+		a(href="/feedback/"+feedback._id) #{feedback.url}
+		p Message: #{feedback.message}
+		p Dom: #{feedback.dom}
+		p Additional Info: #{feedback.additional_info}
