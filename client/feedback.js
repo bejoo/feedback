@@ -89,7 +89,7 @@
 						console.log(feedback);
 						
 						feedback_choose_element(function(){});
-						feedback.addMessage('hello');
+						feedback.addMessage('hello, this is a larger message');
 						feedback.send()
 					}
 				);
