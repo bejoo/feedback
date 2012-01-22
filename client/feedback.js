@@ -87,7 +87,7 @@
 						{
 							this.previous_element.css('border', this.previous_element_border);
 							this.previous_element_border = $el.css('border');
-							$el.css('border', '1px solid red');
+							$el.css('border', '2px solid red');
 							this.previous_element = $el;
 						}
 				    },

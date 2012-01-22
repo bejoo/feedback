@@ -1,3 +1,6 @@
+@maBlue: #6075BE;
+@grey: grey;
+
 body 
 {
   padding: 50px;
@@ -14,16 +17,17 @@ a
 	border: 1px solid grey;
 	margin-bottom: 20px;
 	padding: 10px 10px 10px 10px;
-	
+	background-color: lighten(@grey, 45%);
 	.domobj
 	{
-		margin-left: 50px;	
-		background-color: grey;
+		//margin-left: 35px;	
+		background-color: saturate(@maBlue, 10%);
 		padding: 8px 8px 8px 8px;
 	}
 	.domhtml
 	{
-		margin-left: 50px;	
+	//	margin-left: 70px;	
+	//		width: 60%;
 	}
 }
 

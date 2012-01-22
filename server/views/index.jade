@@ -1,7 +1,6 @@
 h1= title
 p Feedback entries:
 
-
 - each feedback in feedbacks
 	div.feedback
 		- var timestamp = feedback._id.toString().substring(0,8);
@@ -11,5 +10,6 @@ p Feedback entries:
 		p Message: #{feedback.message}
 		p Dom: 
 			p.domobj #{feedback.DOMObject.selector}
-			p.domhtml #{feedback.DOMObject.html}
+			p.domhtml !{feedback.DOMObject.html}
 		p Additional Info: #{feedback.additional_info}
+	

@@ -19,7 +19,6 @@ exports.index = function(req, res)
 	});
 };
 
-
 exports.feedback_log = function(req, res)
 {
 	var fb = new Feedback(req.body);
