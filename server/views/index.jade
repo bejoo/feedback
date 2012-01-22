@@ -9,5 +9,7 @@ p Feedback entries:
 		p #{date}
 		a(href="/feedback/"+feedback._id) #{feedback.url}
 		p Message: #{feedback.message}
-		p Dom: #{feedback.dom}
+		p Dom: 
+			p.domobj #{feedback.DOMObject.selector}
+			p.domhtml #{feedback.DOMObject.html}
 		p Additional Info: #{feedback.additional_info}

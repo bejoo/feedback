@@ -15,7 +15,7 @@ var AddInfoSchema = new Schema(
 var FeedbackSchema = new Schema({
     message: String
   , url: String
-  , dom: {
+  , DOMObject: {
   			  selector: String
   			, html: String
   		}
