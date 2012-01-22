@@ -5,6 +5,24 @@ body
 {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	.feedback
+	{
+		border: 1px solid grey;
+		margin-bottom: 20px;
+		padding: 10px 10px 10px 10px;
+		background-color: lighten(@grey, 45%);
+		.domobj
+		{
+			margin-left: 35px;	
+			background-color: saturate(@maBlue, 10%);
+			padding: 8px 8px 8px 8px;
+		}
+		.domhtml
+		{
+			margin-left: 70px;	
+			width: 70%;
+		}
+	}
 }
 
 a 
@@ -12,23 +30,6 @@ a
   color: #00B7FF;
 }
 
-.feedback
-{
-	border: 1px solid grey;
-	margin-bottom: 20px;
-	padding: 10px 10px 10px 10px;
-	background-color: lighten(@grey, 45%);
-	.domobj
-	{
-		//margin-left: 35px;	
-		background-color: saturate(@maBlue, 10%);
-		padding: 8px 8px 8px 8px;
-	}
-	.domhtml
-	{
-	//	margin-left: 70px;	
-	//		width: 60%;
-	}
-}
+
 
 
