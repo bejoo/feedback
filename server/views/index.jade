@@ -15,4 +15,8 @@ p Feedback entries:
 			p.domobj #{feedback.DOMObject.selector}
 			.domhtml #{feedback.DOMObject.html}
 		p Additional Info: #{feedback.additional_info}
-	
+
+if pagination.previous > 0
+	a(href="/"+pagination.previous) back
+	br
+a(href="/"+pagination.next) next

@@ -47,7 +47,7 @@ app.get("*.less", function(req, res) {
 
 // Routes
 
-app.get('/', routes.index);
+app.get('/:page?', routes.index);
 app.post('/api/feedback/log/', routes.feedback_log);
 
 
