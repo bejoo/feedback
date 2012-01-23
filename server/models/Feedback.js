@@ -22,7 +22,36 @@ var FeedbackSchema = new Schema({
   , additional_info: [AddInfoSchema]
 });
 
-
 var Feedback = mongoose.model('Feedback', FeedbackSchema);
+	
+			
+//methods
+Feedback.getPagination = function (page) 
+{
+	if(!page)
+	{
+		//set default values for pagination
+		to = 10;
+		next = 2;
+		previous = 0;
+	}else
+	{
+		to = page * 10;
+		next = parseFloat(page) + 1;
+		previous = parseFloat(page) - 1;
+	}
+  Feedback.count({}, function(err, count) 
+  { 
+  		max = Math.ceil(count / 10);
+  });
+
+  paginationObj = {
+						next: next 
+					,	previous: previous
+					,	max: max
+				}
+  return paginationObj;
+}
+
 
 module.exports = mongoose.model('Feedback');

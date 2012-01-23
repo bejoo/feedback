@@ -19,4 +19,5 @@ p Feedback entries:
 if pagination.previous > 0
 	a(href="/"+pagination.previous) back
 	br
-a(href="/"+pagination.next) next
+if pagination.max >= pagination.next
+	a(href="/"+pagination.next) next
