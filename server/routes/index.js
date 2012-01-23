@@ -37,11 +37,14 @@ exports.sessions_new = function(req, res)
 
 exports.sessions_auth = function(req, res)
 {
-	users.authenticate(req.body.login, req.body.password, function(user){
-		if(user){
+	users.authenticate(req.body.login, req.body.password, function(user)
+	{
+		if(user)
+		{
 			req.session.user = user;
 			res.redirect(req.body.redir || '/');
-		}else{
+		}else
+		{
 			req.flash('warn', 'Login failed. Please try again.');
 			res.render('sessions/new', {locals: {redir: req.body.redir}, title: 'Login'});
 		}
