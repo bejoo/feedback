@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -9,6 +8,8 @@ var express = require('express')
   , less = require('less');
 
 var app = module.exports = express.createServer();
+
+var MemStore = require('connect').session.MemoryStore;
 
 // Configuration
 
