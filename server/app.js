@@ -20,6 +20,7 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.static(__dirname + '/public'));
   app.use(express.cookieParser());
+  app.use(express.compiler({ src: __dirname + '/public', enable: ['less']}));
   app.use(express.session({
     secret: 'somerandomstring',
     store: MemStore({
@@ -38,20 +39,6 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-//Less CSS compiler
-app.get("*.less", function(req, res) {
-    var path = __dirname + '/public' + req.url;
-    fs.readFile(path, "utf8", function(err, data) 
-    {
-    	if (err) throw err;
-    	less.render(data, function(err, css) 
-    	{
-            if (err) throw err;
-            res.header("Content-type", "text/css");
-            res.send(css);
-   		});
-    });
-});
 
 
 

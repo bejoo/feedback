@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+body .feedback {
+  border: 1px solid grey;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 10px;
+  background-color: #f3f3f3;
+}
+body .feedback .domobj {
+  margin-left: 35px;
+  background-color: #556fc9;
+  padding: 8px 8px 8px 8px;
+}
+body .feedback .domhtml {
+  margin-left: 70px;
+  width: 70%;
+}
+a {
+  color: #00B7FF;
+}

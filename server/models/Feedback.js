@@ -28,6 +28,7 @@ var Feedback = mongoose.model('Feedback', FeedbackSchema);
 //methods
 Feedback.getPagination = function (page) 
 {
+	
 	if(!page)
 	{
 		//set default values for pagination
@@ -44,7 +45,6 @@ Feedback.getPagination = function (page)
   { 
   		max = Math.ceil(count / 10);
   });
-
   paginationObj = {
 						next: next 
 					,	previous: previous

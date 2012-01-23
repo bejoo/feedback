@@ -4,7 +4,7 @@
 */
 var mongoose = require('mongoose');
 var Feedback = require('../models/Feedback');
-var users = require('../models/users.js');
+var users = require('../models/Users.js');
 
 
 exports.index = function(req, res)
