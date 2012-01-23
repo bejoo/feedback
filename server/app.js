@@ -78,7 +78,7 @@ app.dynamicHelpers(
 
 // Routes
 
-app.get('/:page?', routes.index);
+app.get('/:page?', requiresLogin, routes.index);
 app.post('/api/feedback/log/', routes.feedback_log);
 
 // Session Routes
