@@ -10,12 +10,29 @@ var users = require('../users.js');
 exports.index = function(req, res)
 {
 //	Feedback.find({}, [], {'group': 'message'}, function (err, feedback) 
-	Feedback.find(function (err, feedback) 
+	if(!req.params.page)
+	{
+		to = 10;
+		next = 2;
+		previous = 0;
+	}else
+	{
+		to = req.params.page * 10;
+		next = parseFloat(req.params.page) + 1;
+		previous = parseFloat(req.params.page) - 1;
+	}
+	pagination = {
+						next: next 
+					,	previous: previous
+				}
+	
+	Feedback.find({}).sort('_id', 1).skip(to - 9).limit(to).execFind( function (err, feedback) 
   	{
   	  res.render('index', 
   	  { 
   	  		title: 'Feedback'
   	  	,	feedbacks: feedback
+  	  	,	pagination: pagination
   	  });
 	});
 };

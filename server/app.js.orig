@@ -10,6 +10,7 @@ var express = require('express')
 
 var app = module.exports = express.createServer();
 
+var MemStore = require('connect').session.MemoryStore;
 // Configuration
 
 app.configure(function(){
@@ -78,7 +79,11 @@ app.dynamicHelpers(
 
 // Routes
 
+<<<<<<< HEAD
+app.get('/', requiresLogin, routes.index);
+=======
 app.get('/:page?', routes.index);
+>>>>>>> f3a04fb68ad841138dcf261f4d7cf394968f3537
 app.post('/api/feedback/log/', routes.feedback_log);
 
 // Session Routes
