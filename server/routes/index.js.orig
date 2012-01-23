@@ -27,6 +27,8 @@ exports.feedback_log = function(req, res)
 {
 	var fb = new Feedback(req.body);
 	fb.save();
+<<<<<<< HEAD
+=======
 	console.log(fb);
 };
 
@@ -51,4 +53,5 @@ exports.sessions_auth = function(req, res)
 exports.sessions_destroy = function(req, res) {
   delete req.session.user;
   res.redirect('/sessions/new');
+>>>>>>> f425697abd32acfd4f984dd0e15182e1b550b044
 };
