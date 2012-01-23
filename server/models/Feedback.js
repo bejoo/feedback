@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
   ObjectId = Schema.ObjectId;
 
 //database connection
-mongoose.connect('mongodb://localhost/feedback');
+mongoose.connect('mongodb://127.0.0.1/feedback');
 
 var AddInfoSchema = new Schema(
 {
@@ -41,14 +41,15 @@ Feedback.getPagination = function (page)
 		next = parseFloat(page) + 1;
 		previous = parseFloat(page) - 1;
 	}
-  Feedback.count({}, function(err, count) 
+  Feedback.count(function(err, count) 
   { 
-  		max = Math.ceil(count / 10);
+  		maxCount = Math.ceil(count / 10);
   });
+  
   paginationObj = {
 						next: next 
 					,	previous: previous
-					,	max: max
+					,	max: maxCount
 				}
   return paginationObj;
 }

@@ -10,7 +10,6 @@ var users = require('../models/Users.js');
 exports.index = function(req, res)
 {
 //	Feedback.find({}, [], {'group': 'message'}, function (err, feedback) 
-	
 	var paginationObj = Feedback.getPagination(req.params.page);
 	Feedback.find({}).sort('_id', 1).skip(to - 9).limit(to).execFind( function (err, feedback) 
   	{
@@ -27,7 +26,6 @@ exports.feedback_log = function(req, res)
 {
 	var fb = new Feedback(req.body);
 	fb.save();
-	console.log(fb);
 };
 
 exports.sessions_new = function(req, res)
@@ -51,7 +49,8 @@ exports.sessions_auth = function(req, res)
 	});
 };
 
-exports.sessions_destroy = function(req, res) {
+exports.sessions_destroy = function(req, res) 
+{
   delete req.session.user;
   res.redirect('/sessions/new');
 };
