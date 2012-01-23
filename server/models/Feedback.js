@@ -45,7 +45,7 @@ Feedback.getPagination = function (page)
   { 
   		maxCount = Math.ceil(count / 10);
   });
-  
+
   paginationObj = {
 						next: next 
 					,	previous: previous
