@@ -6,7 +6,7 @@ Feedback is a tool designed to enable the user to interact with the
 developers.
 
 A user can simply click on a DOM element, enter a message and send it to
-the developers. Feedback allows you to easily add additional Info such
+the developers. Feedback allows you to easily add additional info such
 as user email, without having to ask the user manually.
 
 Requirements: Server: Node.js and Mongodb. Client: jQuery Plugin.
@@ -22,7 +22,7 @@ Requirements: Server: Node.js and Mongodb. Client: jQuery Plugin.
 
 3.  Start MongoDB
 
-Please not that bejoo/feedback by default runs on port 3000. You can
+Please note that bejoo/feedback by default runs on port 3000. You can
 modify app.js to change the port. The MongoDB Database will
 automatically be created and is called feedback.
 
