@@ -4,5 +4,10 @@ $(document).ready(function()
 	{
 		$(this).html($(this).text());
 	});
+	
+	$('.domobj').click(function()
+	{
+		$(this).next('.domhtml').show();
+	});
 
 });

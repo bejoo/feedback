@@ -43,13 +43,13 @@ Feedback.getPagination = function (page)
 	}
   Feedback.count(function(err, count) 
   { 
-  		maxCount = Math.ceil(count / 10);
+  		max = Math.ceil(count / 10);
   });
 
   paginationObj = {
 						next: next 
 					,	previous: previous
-					,	max: maxCount
+					,	max: max
 				}
   return paginationObj;
 }

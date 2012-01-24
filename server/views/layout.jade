@@ -5,12 +5,16 @@ html
 	link(rel='stylesheet', href='/stylesheets/feedback.css')
 	block scripts
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-	body!= body
-	#header
+	body
+		h1.center= title
 		if (session.user)
-			#user= 'logged in as ' + session.user.login
-			#logout
-			a(href='/sessions/destroy') logout
+			#navigation
+				p Navigation
+					#user= 'logged in as ' + session.user.login
+					#logout
+					a(href='/sessions/destroy') logout
 		if (flash.warn)
 			p#warn= flash.warn
-	#container
+		
+	!= body
+		

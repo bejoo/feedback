@@ -1,23 +1,22 @@
 block scripts
 	script(src='/javascripts/index.js')
-
-h1= title
-p Feedback entries:
-
-- each feedback in feedbacks
-	div.feedback
-		- var timestamp = feedback._id.toString().substring(0,8);
-		- var date = new Date( parseInt( timestamp, 16 ) * 1000 );
-		p #{date}
-		a(href="/feedback/"+feedback._id) #{feedback.url}
-		p Message: #{feedback.message}
-		p Dom: 
-			p.domobj #{feedback.DOMObject.selector}
-			.domhtml #{feedback.DOMObject.html}
-		p Additional Info: #{feedback.additional_info}
-
-if pagination.previous > 0
-	a(href="/"+pagination.previous) back
-	br
-if pagination.max >= pagination.next
-	a(href="/"+pagination.next) next
+#feedback-container
+	- each feedback in feedbacks
+		div.feedback
+			- var timestamp = feedback._id.toString().substring(0,8);
+			- var date = new Date( parseInt( timestamp, 16 ) * 1000 );
+			p #{date}
+			a(href="/feedback/"+feedback._id) #{feedback.url}
+			p Message: #{feedback.message}
+			p Dom: 
+				p.domobj #{feedback.DOMObject.selector}
+				.domhtml #{feedback.DOMObject.html}
+			p Additional Info: #{feedback.additional_info}
+		
+	#pagination	
+		if pagination.previous > 0
+			.center
+				a(href="/"+pagination.previous) <
+		if pagination.max >= pagination.next
+			.center
+				a(href="/"+pagination.next) >
