@@ -6,9 +6,10 @@ html
 	block scripts
 		script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
 	body
-		h1.center= title
 		if (session.user)
 			#navigation
+				h1= title
+
 				p Navigation
 					#user= 'logged in as ' + session.user.login
 					#logout

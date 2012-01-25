@@ -1,18 +1,6 @@
 block scripts
 	script(src='/javascripts/index.js')
 #feedback-container
-	- each feedback in feedbacks
-		div.feedback
-			- var timestamp = feedback._id.toString().substring(0,8);
-			- var date = new Date( parseInt( timestamp, 16 ) * 1000 );
-			p #{date}
-			a(href="/feedback/"+feedback._id) #{feedback.url}
-			p Message: #{feedback.message}
-			p Dom: 
-				p.domobj #{feedback.DOMObject.selector}
-				.domhtml #{feedback.DOMObject.html}
-			p Additional Info: #{feedback.additional_info}
-		
 	#pagination	
 		if pagination.previous > 0
 			.center
@@ -20,3 +8,24 @@ block scripts
 		if pagination.max >= pagination.next
 			.center
 				a(href="/"+pagination.next) >
+
+	- each feedback in feedbacks
+		div.feedback
+			- var timestamp = feedback._id.toString().substring(0,8);
+			- var date = new Date( parseInt( timestamp, 16 ) * 1000 );
+			- var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+			- var month = months[date.getUTCMonth() + 1];
+			- var day = date.getDay()+1;
+			- var year = date.getFullYear();
+			p.datum 
+				#{day}
+				br
+				#{month}
+				br
+				#{year}
+			p #{feedback.url}
+			p Message: #{feedback.message}
+			p Dom: 
+				p.domobj #{feedback.DOMObject.selector}
+				.domhtml #{feedback.DOMObject.html}
+			p Additional Info: #{feedback.additional_info}
