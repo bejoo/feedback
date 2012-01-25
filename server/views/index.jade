@@ -23,9 +23,10 @@ block scripts
 				#{month}
 				br
 				#{year}
+			p.message #{feedback.message}
 			p #{feedback.url}
-			p Message: #{feedback.message}
-			p Dom: 
+			p Dom
 				p.domobj #{feedback.DOMObject.selector}
 				.domhtml #{feedback.DOMObject.html}
-			p Additional Info: #{feedback.additional_info}
+			p Additional Info
+				p #{feedback.additional_info}
