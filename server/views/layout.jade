@@ -9,10 +9,11 @@ html
 		if (session.user)
 			#navigation
 				h1= title
-
-				p Navigation
-					#user= 'logged in as ' + session.user.login
-					#logout
+				#h1-extension >
+				p#navigation_bottom
+					a(href='/settings/') settings
+					br
+					//#user= 'logged in as ' + session.user.login
 					a(href='/sessions/destroy') logout
 		if (flash.warn)
 			p#warn= flash.warn

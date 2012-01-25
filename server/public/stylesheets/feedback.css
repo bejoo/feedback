@@ -5,9 +5,16 @@ body {
 }
 h1 {
   margin-bottom: 20px;
+  margin-top: 75px;
   text-shadow: 0px 1px 2px #4a4a4a;
   color: #777777;
   font: 40px 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  clear: none;
+}
+#h1-extension {
+  color: #00B7FF;
+  text-shadow: 0px 1px 2px #4a4a4a;
+  font: 35px 'LeagueGothicRegular', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 #navigation {
   background: #2a2a2a;
@@ -85,6 +92,10 @@ h1 {
   width: 70%;
   display: none;
 }
+#navigation_bottom {
+  position: absolute;
+  bottom: 25px;
+}
 .center {
   margin-left: auto;
   margin-right: auto;
@@ -97,7 +108,9 @@ h1 {
 }
 #pagination a {
   text-decoration: none;
+  color: #FFD073;
 }
 a {
-  color: #00B7FF;
+  color: #FFD073;
+  text-decoration: none;
 }
