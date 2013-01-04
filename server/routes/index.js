@@ -28,6 +28,11 @@ exports.feedback_log = function(req, res)
 	fb.save();
 };
 
+exports.settings = function(req, res)
+{
+	res.render('settings/settings', {title: 'Settings'});
+};
+
 exports.sessions_new = function(req, res)
 {
 	res.render('sessions/new', {locals: {redir: req.query.redir}, title: 'Login'});

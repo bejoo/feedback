@@ -3,10 +3,8 @@ block scripts
 #feedback-container
 	#pagination	
 		if pagination.previous > 0
-			.center
 				a(href="/"+pagination.previous) <
 		if pagination.max >= pagination.next
-			.center
 				a(href="/"+pagination.next) >
 
 	- each feedback in feedbacks

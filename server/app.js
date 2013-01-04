@@ -68,6 +68,7 @@ app.dynamicHelpers(
 
 app.get('/:page?', requiresLogin, routes.index);
 app.post('/api/feedback/log/', routes.feedback_log);
+app.get('/settings/all', routes.settings);
 
 // Session Routes
 
@@ -75,5 +76,5 @@ app.get('/sessions/new', routes.sessions_new);
 app.post('/sessions', routes.sessions_auth);
 app.get('/sessions/destroy', routes.sessions_destroy);
 
-app.listen(3000);
+app.listen(3001);
 console.log("Feedback server listening on port %d in %s mode", app.address().port, app.settings.env);
